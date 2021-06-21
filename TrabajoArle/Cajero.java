@@ -1,6 +1,8 @@
 package TrabajoArle;
 
 
+import java.text.NumberFormat;
+
 public class Cajero {
     private String nombre;
     private Double baseInicial;
@@ -23,14 +25,14 @@ class Productos extends Cajero {
     private String idProducto;
     private String nombreProducto;
     private int precio;
-    public  double iva;
 
 
-    Productos(String id,String nom, int prec, double iva ) {
+
+    Productos(String id,String nom, int prec ) {
         idProducto = id;
         nombreProducto = nom;
         precio = prec;
-        iva= iva;
+
 
     }
 
@@ -48,7 +50,9 @@ class Productos extends Cajero {
 
     public void setPrecio(int precio) { this.precio = precio; }
 
-    public double getPrecio() { return precio; }
+    public int getPrecio() { return precio; }
+
 
 }
+
 
