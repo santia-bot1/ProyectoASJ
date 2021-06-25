@@ -1,8 +1,6 @@
 package TrabajoArle;
 
 
-import java.text.NumberFormat;
-
 public class Cajero {
     private String nombre;
     private Double baseInicial;
@@ -21,17 +19,61 @@ public class Cajero {
 
     public void setBaseInicial(Double baseInicial) { this.baseInicial = baseInicial; }
 }
-class Productos extends Cajero {
+class Compra extends Cajero{
+
+    private String nombreProduc;
+    private double vTotal;
+    private int cantidad;
+
+    Compra(double total, String nom , int canti ) {
+
+        this.nombreProduc = nom;
+        this.vTotal = total ;
+        this.cantidad = canti;
+    }
+
+    public Compra() {
+
+    }
+
+
+    public void setvTotal(double vTotal) {
+        this.vTotal = vTotal;
+    }
+
+    public double getvTotal() {
+        return vTotal;
+    }
+
+
+
+    public void setNombreProduc(String nombreProduc) { this.nombreProduc = nombreProduc; }
+
+    public String getNombreProduc() { return nombreProduc; }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
+}
+class Productos extends Compra {
     private String idProducto;
     private String nombreProducto;
-    private int precio;
+    private Double precio;
 
 
 
-    Productos(String id,String nom, int prec ) {
+
+    Productos(String id,String nom, double prec ) {
         idProducto = id;
         nombreProducto = nom;
         precio = prec;
+
 
 
     }
@@ -48,9 +90,10 @@ class Productos extends Cajero {
 
     public String getNombreProducto() { return nombreProducto; }
 
-    public void setPrecio(int precio) { this.precio = precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
 
-    public int getPrecio() { return precio; }
+    public double getPrecio() { return precio; }
+
 
 
 }
